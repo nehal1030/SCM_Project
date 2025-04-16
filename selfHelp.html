@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Help Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #0f1111;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .book {
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .book h3 {
+            margin: 0;
+        }
+        .book p {
+            margin: 5px 0;
+        }
+        .book button {
+            background: #ffa500;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .book button:hover {
+            background: #ffa500;
+        }
+
+
+        .view_more_button {
+             display: flex;
+            justify-content: center;   /* Horizontally center the button */
+            align-items: center;       /* Vertically center the button */
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Self-Help Books</h1>
+    </header>
+    <div class="container">
+        <h2>Featured Self-Help Books :</h2>
+
+        <div class="book">
+            <h3>Atomic Habits</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/81F90H7hnML.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="Atomic Habits">
+            <p><strong>Author:</strong> James Clear</p>
+            <p><strong>Price:</strong> $13.99</p>
+            <p><strong>Description:</strong> A guide to building good habits and breaking bad ones, focusing on the importance of small changes for lasting transformation.</p>
+            <p><button onclick="addToCart('Atomic Habits', 13.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>The Power of Now</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/61Ij8nLooNL.UF1000,1000_QL80.jpg" height="200" width="200" alt="The Power of Now">
+            <p><strong>Author:</strong> Eckhart Tolle</p>
+            <p><strong>Price:</strong> $12.99</p>
+            <p><strong>Description:</strong> A spiritual guide to help readers discover the importance of living in the present moment and letting go of past and future worries.</p>
+            <p><button onclick="addToCart('The Power of Now', 12.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>You Are a Badass</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/71SUujKRkdL.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="You Are a Badass">
+            <p><strong>Author:</strong> Jen Sincero</p>
+            <p><strong>Price:</strong> $14.99</p>
+            <p><strong>Description:</strong> A self-help book that aims to inspire readers to create a life they love through practical advice and empowering anecdotes.</p>
+            <p><button onclick="addToCart('You Are a Badass', 14.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>Mindset: The New Psychology of Success</h3>
+            <br>
+            <img src="https://rukminim2.flixcart.com/image/850/1000/kctf0cw0/regionalbooks/m/g/5/mindset-the-new-psychology-of-success-paperback-english-original-imaftug4fv8hvfbs.jpeg?q=20&crop=false" height="200" width="200" alt="Mindset: The New Psychology of Success">
+            <p><strong>Author:</strong> Carol S. Dweck</p>
+            <p><strong>Price:</strong> $15.99</p>
+            <p><strong>Description:</strong> This book explores the power of mindset in determining success and offers strategies for fostering a growth mindset.</p>
+            <p><button onclick="addToCart('Mindset: The New Psychology of Success', 15.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>The Subtle Art of Not Giving a F*ck</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg" height="200" width="200" alt="The Subtle Art of Not Giving a F*ck">
+            <p><strong>Author:</strong> Mark Manson</p>
+            <p><strong>Price:</strong> $16.99</p>
+            <p><strong>Description:</strong> A counterintuitive approach to living a good life by focusing on what truly matters and letting go of unnecessary pressures.</p>
+            <p><button onclick="addToCart('The Subtle Art of Not Giving a F*ck', 16.99)">Add to Cart</button></p>
+        </div>
+
+       
+    </div>
+</body>
+</html>

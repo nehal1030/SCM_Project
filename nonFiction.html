@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Fiction Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background:#0f1111;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .book {
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .book h3 {
+            margin: 0;
+        }
+        .book p {
+            margin: 5px 0;
+        }
+        .book button {
+            background: #ffa500;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .book button:hover {
+            background: #ffa500;
+        }
+
+        .view_more_button {
+             display: flex;
+            justify-content: center;   /* Horizontally center the button */
+            align-items: center;       /* Vertically center the button */
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Non-Fiction Books</h1>
+    </header>
+    <div class="container">
+        <h2>Featured Non-Fiction Books:</h2>
+
+        <div class="book">
+            <h3>Becoming</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/81yyfjVd1ML.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="Becoming">
+            <p><strong>Author:</strong> Michelle Obama</p>
+            <p><strong>Price:</strong> $14.99</p>
+            <p><strong>Description:</strong> A memoir by the former First Lady of the United States, chronicling her journey from childhood to her years in the White House.</p>
+            <p><button onclick="addToCart('Becoming', 14.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>Educated</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/81Om0n+pfyL.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="Educated">
+            <p><strong>Author:</strong> Tara Westover</p>
+            <p><strong>Price:</strong> $13.99</p>
+            <p><strong>Description:</strong> A memoir detailing the author's quest for knowledge, escaping her survivalist family and pursuing education against all odds.</p>
+            <p><button onclick="addToCart('Educated', 13.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>Sapiens: A Brief History of Humankind</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/713jIoMO3UL.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="Sapiens">
+            <p><strong>Author:</strong> Yuval Noah Harari</p>
+            <p><strong>Price:</strong> $16.99</p>
+            <p><strong>Description:</strong> An exploration of humanity's history from the Stone Age to the modern age, examining how biology and history have shaped us.</p>
+            <p><button onclick="addToCart('Sapiens: A Brief History of Humankind', 16.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>The Immortal Life of Henrietta Lacks</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/81coyP8S-ZL.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="The Immortal Life of Henrietta Lacks">
+            <p><strong>Author:</strong> Rebecca Skloot</p>
+            <p><strong>Price:</strong> $12.99</p>
+            <p><strong>Description:</strong> The story of Henrietta Lacks, whose cells were taken without her knowledge and became one of the most important tools in medicine.</p>
+            <p><button onclick="addToCart('The Immortal Life of Henrietta Lacks', 12.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>Thinking, Fast and Slow</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/71f6DceqZAL.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="Thinking, Fast and Slow">
+            <p><strong>Author:</strong> Daniel Kahneman</p>
+            <p><strong>Price:</strong> $15.99</p>
+            <p><strong>Description:</strong> A groundbreaking book on behavioral economics that explores how our minds work and how we make decisions.</p>
+            <p><button onclick="addToCart('Thinking, Fast and Slow', 15.99)">Add to Cart</button></p>
+        </div>
+
+      
+    </div>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account - Beyond Books</title>
+  <style>
+    /* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+            background:  #0f1111;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+
+}
+#search{
+    background-color: #f08804;
+}
+
+header h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+
+/* Account section */
+.account {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  align-items: center;
+  
+}
+
+.account-sidebar {
+  width: 25%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account-sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.account-sidebar ul {
+  list-style: none;
+}
+
+.account-sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.account-sidebar ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.account-sidebar ul li a:hover {
+  color: #f08804;
+}
+
+.account-content {
+  width: 70%;
+  margin-left: 5%;
+}
+
+.account-content h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.account-content h3 {
+  font-size: 22px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.account-content .profile-section, .account-content .order-history, .account-content .account-settings {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account-content .order-history ul {
+  list-style: none;
+}
+
+.account-content .order-history ul li {
+  margin-bottom: 10px;
+}
+
+.account-content .order-history ul li a {
+  color: #ffa500;
+}
+
+.account-content .order-history ul li span {
+  color: #777;
+}
+
+.account-content .btn {
+  background-color: #ffa500;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.account-content .btn:hover {
+  background-color:#ffa500;
+}
+
+/* Footer */
+footer {
+  background-color:  #0f1111;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Online Bookstore</h1>
+      <nav>
+        
+            <a href="/beyond_books.html">Home</a>
+            <a href="/categories.html" target="_main">Categories</a>
+            <a href="my-account.html" class="active">My Account</a>
+            <a href="my_cart.html">My Cart</a>
+            <a href="/about_us.html">About Us</a>
+            <a href="/contact_us.html">Contact Us</a>
+            <input placeholder="search BeyondBooks.in">
+                <button id="search">Search</button>
+       
+      </nav>
+    </div>
+  </header>
+
+  <section class="account">
+    <div class="container">
+      <div class="account-sidebar">
+        <h2>Account Details</h2>
+        <ul>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#orders">Order History</a></li>
+          <li><a href="#settings">Account Settings</a></li>
+          <li><a href="#logout">Logout</a></li>
+        </ul>
+      </div>
+
+      <div class="account-content">
+        <br>
+        <h2>Welcome, John Doe!</h2>
+
+        <!-- Profile Section -->
+        <div id="profile" class="profile-section">
+          <h3>Profile Information</h3>
+          <p>Email: johndoe@email.com</p>
+          <br>
+          <p>Phone: +91 XXXXX-XXXXX</p>
+          <br>
+          <button class="btn">Edit Profile</button>
+        </div>
+
+        <!-- Order History Section -->
+        <div id="orders" class="order-history">
+          <h3>Order History</h3>
+          <ul>
+            <li>Order #12345 - <span>Completed</span> - <a href="#">View Details</a></li>
+            <li>Order #12344 - <span>Shipped</span> - <a href="#">View Details</a></li>
+            <li>Order #12343 - <span>Pending</span> - <a href="#">View Details</a></li>
+          </ul>
+        </div>
+
+        <!-- Account Settings Section -->
+        <div id="settings" class="account-settings">
+          <h3>Account Settings</h3>
+          <p><strong>Change Password:</strong></p>
+          <br>
+          <form action="#" method="POST">
+            <label for="old-password">Old Password:</label>
+            <input type="password" id="old-password" name="old-password" required>
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password" required>
+            <button type="submit" class="btn">Change Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Online Bookstore. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

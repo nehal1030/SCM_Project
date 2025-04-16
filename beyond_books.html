@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEYOND BOOKS</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/circles-background-dark-tones_60389-166.jpg?semt=ais_hybrid');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #0f1111;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        #search {
+            background-color: #f08804;
+            padding: 10px;
+        }
+
+        #searchButton{
+            background-color: #f08804
+        }
+
+        #featured_books {
+            color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Flexbox Container for Featured Books */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        /* Updated book card styles */
+        .book-card {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            padding: 20px;
+            margin: 15px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            color: #333; /* Dark text color to ensure visibility */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .book-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .book-card h2 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #333; /* Dark color for the title */
+        }
+
+        .book-card p {
+            margin: 10px 0;
+            color: #444; /* Slightly lighter text for description */
+        }
+
+        .book-card button {
+            background-color: #f08804;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .book-card button:hover {
+            background-color: #d47503;
+        }
+        a{
+            text-decoration: none;
+            color:white
+        }
+
+        /* Footer Styles */
+        footer{
+            height:500px;
+            color:white;
+            background-color: #0f1111;
+        }
+        #copyright{
+            text-align: center;
+        }
+
+        #backToTop {
+            text-align: center;
+        }
+
+        
+        #information, #categories, #help {
+            display: inline-block;
+            padding: 50px;
+            margin-top: 40px;
+            margin-left: 300px;
+        }
+
+        #categories {
+            margin-left: 100px;
+        }
+
+        #help {
+            margin-left: 50px;
+        }
+
+        .container .book-card:hover {
+            transform: scale(1.05); /* Slight zoom-in effect on hover */
+        }
+    </style>
+</head>
+<!-- <body onload="loadCartFromLocalStorage()"> -->
+    <body>
+    <header>
+        <h1>BEYOND BOOKS</h1>
+        <nav>
+            <a href="/new.html">Home</a>
+            <a href="/categories.html" target="_main">Categories</a>
+            <a href="/my_account.html" target="_main">My Account</a>
+            <a href="/my_cart.html" target="_main">My Cart</a>
+            <a href="/about_us.html" target="_main">About Us</a>
+            <a href="/contact_us.html" target="_main">Contact Us</a>
+            <input id="searchInput" placeholder="search BeyondBooks.in">
+            <button id="searchButton" onclick="searchBooks()">Search</button>
+            <h3 id="totalPrice">Total Price: $0.00</h3>
+
+        </nav>
+    </header>
+
+    <div id="featured_books">
+        <h2>Featured Books :</h2>
+        <div class="container">
+            <!-- Book Card 1 -->
+            <div class="book-card" data-title="Atomic Habits" data-description="Atomic Habits by James Clear teaches how small, consistent changes can lead to significant personal growth and success over time.">
+                <h2>ATOMIC HABITS</h2>
+                <img src="https://charleshaworth.com/wp-content/uploads/2020/09/atomic-habits_gallery_hi-res_01.jpg" alt="Atomic Habits">
+                <p><strong>Author:</strong> JAMES CLEAR</p>
+                <p><strong>Price:</strong> $13.99</p>
+                <p><strong>Description:</strong> "Atomic Habits" by James Clear teaches how small, consistent changes can lead to significant personal growth and success over time. This book explores how small changes can lead to lasting personal and professional growth through the power of habit-building. It reveals how making tiny, positive changes in daily routines can compound into significant long-term success.</p>
+                <p><button onclick="addToCart('Atomic Habits', 13.99)">Add to Cart</button></p>
+            </div>
+
+            <!-- Book Card 2 -->
+            <div class="book-card" data-title="The Psychology of Money" data-description= "The Psychology of Money by Morgan Housel explores how emotions and behaviors influence financial decisions, emphasizing that wealth is as much about mindset as it is about money.">
+                <h2>PSYCHOLOGY OF MONEY</h2>
+                <img src="https://i0.wp.com/neurabites.com/wp-content/uploads/2021/09/psychology-of-money-book-cover.jpg?fit=1200%2C900&ssl=1" alt="Psychology of Money">
+                <p><strong>Author:</strong> MORGAN HOUSEL</p>
+                <p><strong>Price:</strong> $8.99</p>
+                <p><strong>Description:</strong> "The Psychology of Money" by Morgan Housel explores how emotions and behaviors influence financial decisions, emphasizing that wealth is as much about mindset as it is about money. This book  explores how personal biases and emotions shape financial decisions, depicting the importance of long-term thinking in wealth-building.</p>
+                <p><button onclick="addToCart('The Psychology of Money', 8.99)">Add to Cart</button></p>
+            </div>
+
+            <!-- Book Card 3 -->
+            <div class="book-card" data-title="The Secrets" data-description="The Secrets by Rhonda Byrne reveals the power of positive thinking and the law of attraction, suggesting that one can manifest their desires through focused intention and belief.">
+                <h2>SECRETS</h2>
+                <img src="https://s3-us-west-2.amazonaws.com/tabs.web.media/a/c/acel/acel-square-1536.jpg" alt="Secrets">
+                <p><strong>Author:</strong> RHONDA BYRNE</p>
+                <p><strong>Price:</strong> $13.99</p>
+                <p><strong>Description:</strong>"The Secrets" by Rhonda Byrne reveals the power of positive thinking and the law of attraction, shows that one can manifest their desires through focused intention and belief. It explores how the law of attraction can help manifest one's dreams.</p>
+                <p><button onclick="addToCart('The Secrets', 13.99)">Add to Cart</button></p>
+            </div>
+
+            <!-- Book Card 4 -->
+            <div class="book-card" data-title="To Kill a Mockingbird" data-description="To Kill a Mockingbird by Harper Lee addresses themes of racial injustice and moral growth through the eyes of a young girl in the Deep South during the 1930s.">
+                <h2>TO KILL A MOCKINGBIRD</h2>
+                <img src="https://chiefessays.net/wp-content/uploads/2018/02/to-kill-a-mockingbird-book-cover.jpg" alt="To Kill a Mockingbird">
+                <p><strong>Author:</strong> HARPER LEE</p>
+                <p><strong>Price:</strong> $12.99</p>
+                <p><strong>Description:</strong>"To Kill a Mockingbird" by Harper Lee addresses themes of racial injustice and moral growth through the eyes of a young girl in the Deep South during the 1930s. This book examines the complexities of morality and racism as seen through the childhood perspective of Scout Finch in the Deep South. is a poignant exploration of racial inequality, courage, and empathy.
+                </p>
+                <p><button onclick="addToCart('To Kill a Mockingbird', 12.99)">Add to Cart</button></p>
+            </div>
+
+            <!-- Book Card 5 -->
+            <div class="book-card" data-title="The Power of Your Subconscious Mind" data-description="The Power of Your Subconscious Mind by Joseph Murphy teaches how harnessing the subconscious can transform beliefs and manifest personal success and happiness.">
+                <h2>THE POWER OF YOUR SUBCONSCIOUS MIND</h2>
+                <img src="https://tfiglobalnews.com/wp-content/uploads/2023/03/Power_of_subconscious_mind_book_lessons.jpg" alt="The Power of Your Subconscious Mind">
+                <p><strong>Author:</strong> JOSEPH MURPHY</p>
+                <p><strong>Price:</strong> $12.99</p>
+                <p><strong>Description:</strong>"The Power of Your Subconscious Mind" by Joseph Murphy teaches how harnessing the subconscious can transform beliefs and manifest personal success and happiness. This book reveals how tapping into the subconscious mind can unlock personal potential and bring about positive change in life.</p>
+                <p><button onclick="addToCart('The Power of Your Subconscious Mind', 12.99)">Add to Cart</button></p>
+            </div>
+
+            <!-- Book Card 6 -->
+            <div class="book-card" data-title="Rich Dad Poor Dad" data-description="Rich Dad Poor Dad contrasts the financial philosophies of two father figures, highlighting the importance of financial education and investing for wealth-building.">
+                <h2>RICH DAD POOR DAD</h2>
+                <img src="https://assets.thalia.media/img/artikel/a60ce454172b432bfa0fc049bc3d7e84eba5de63-72_BF2000-2000.jpeg" width="300" , height="245" alt="RICH DAD POOR DAD">
+                <p><strong>Author:</strong> ROBERT T' KIYOSAKI</p>
+                <p><strong>Price:</strong> $9.99</p>
+                
+                <p><strong>Description:</strong> "Rich Dad Poor Dad" contrasts the financial philosophies of two father figures, highlighting the importance of financial education and investing for wealth-building. This book challenges traditional views on money and investing, emphasizing the value of financial literacy and building wealth through assets.</p>
+                <p><button onclick="addToCart('Rich Dad Poor Dad', 9.99)">Add to Cart</button></p>
+            </div>
+        
+            <!-- Book Card 7 -->
+            <div class="book-card" data-title="Good Vibes, Good Life" data-description="Good Vibes, Good Life emphasizes the power of positive energy and mindset in shaping a fulfilling and joyful existence.">
+                <h2>GOOD VIBES, GOOD LIFE</h2>
+                <img src="https://professionalhairdresser.co.uk/wp-content/uploads/2021/01/book-club-good-vibes-good-life-by-vex-king.jpg" width="300" , height="260" alt="GOOD VIBES GOOD LIFE">
+                <p><strong>Author:</strong>VEX KING</p>
+                <p><strong>Price:</strong> $10.99</p>
+        
+                <p><strong>Description:</strong>"Good Vibes, Good Life" emphasizes the power of positive energy and mindset in shaping a fulfilling and joyful existence. This book offers practical advice on how to cultivate positive energy, self-belief, and a mindset for personal growth and happiness.It teaches to transform negative energy into positive vibrations, promoting self-love and a fulfilling life.</p>
+                <p><button onclick="addToCart('Good Vibes, Good Life', 10.99)">Add to Cart</button></p>
+            </div>
+        
+        
+            <!-- Book Card 8 -->
+            <div class="book-card" data-title="Dopamine detox" data-description="Dopamine detox is a practice aimed at reducing overstimulation and resetting the brain's reward system by minimizing distractions and addictive behaviors.">
+                <h2>DOPAMINE DETOX</h2>
+                <img src="https://whatsinyourstory.com/wp-content/uploads/2023/05/WhatsApp-Image-2023-09-08-at-4.17.05-PM.jpeg" width="300" , height="225" alt="DOPAMINE DETOX">
+                <p><strong>Author:</strong>THIBAUT MEURISSE</p>
+                <p><strong>Price:</strong> $15.99</p>
+        
+                <p><strong>Description:</strong>"Dopamine detox" is a practice aimed at reducing overstimulation and resetting the brain's reward system by minimizing distractions and addictive behaviors.</p>
+                <p><button onclick="addToCart('Dopamine detox', 15.99)">Add to Cart</button></p>
+            </div>
+
+        </div>
+    </div>
+
+    <br><br><br><br>
+    <footer>
+        <br>
+        <div id="backToTop"><a href="#">Back to top</a></div>
+
+        <br>
+        <hr>
+        <div id="information">
+            <p><u>Information</u></p>
+            <br>
+            <a href="/beyond_books.html">Home</a>
+            <br>
+            <a href="/about_us.html">About Us</a>
+        </div>
+        
+        <div id="categories">
+            <p><u>Categories</u></p>
+            <br>
+            <a href="/fiction.html">Fiction</a>
+            <br>
+            <a href="/nonFiction.html">Non fiction</a>
+            <br> 
+            <a href="/selfHelp.html">Self Help Books</a>
+            <br>
+            <a href="/business.html"> Business </a>
+            <br>
+            <a href="/biography.html">Biography</a>
+        </div>
+
+        <div id="help">
+            <p><u>Help Center</u></p>
+            <br>
+            <a href="contact_us.html">Contact Us</a>
+        </div>
+
+        <hr>
+        <br><br>
+        <div id="copyright">&copy; 2024 Online Bookstore</div>
+
+    </footer>
+
+<script>
+    // Initialize or retrieve cart data from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+
+    // Update total price on page load
+    document.getElementById('totalPrice').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
+
+    // Search books based on title or description
+    function searchBooks() {
+        let searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        let bookCards = document.querySelectorAll('.book-card');
+
+        bookCards.forEach(card => {
+            let title = card.getAttribute('data-title').toLowerCase();
+            let description = card.getAttribute('data-description').toLowerCase();
+            card.style.display = title.includes(searchTerm) || description.includes(searchTerm) ? 'block' : 'none';
+        });
+    }
+
+    // Function to add a book to the cart
+    function addToCart(bookTitle, price) {
+        // Add the book to the cart array
+        cart.push({ bookTitle, price });
+
+        // Update the total price
+        totalPrice += price;
+
+        // Save the updated cart and total price in localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        localStorage.setItem('totalPrice', totalPrice.toFixed(2));
+
+        // Update the displayed total price
+        document.getElementById('totalPrice').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
+
+        // Notify the user
+        alert(`${bookTitle} added to cart!`);
+    }
+</script>
+
+</body>
+</html>
