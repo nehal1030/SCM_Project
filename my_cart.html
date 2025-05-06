@@ -180,22 +180,19 @@
     </footer>
 
     <script>
-        // Function to render all items in the cart
         function renderCart() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const cartItemsContainer = document.getElementById('cartItems');
             let totalPrice = 0;
     
-            cartItemsContainer.innerHTML = ''; // Clear previous content
+            cartItemsContainer.innerHTML = '';
     
-            // Show message if cart is empty
             if (cart.length === 0) {
                 cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
                 document.getElementById('cartTotal').innerText = '$0.00';
                 return;
             }
     
-            // Render each cart item
             cart.forEach((item, index) => {
                 const itemPrice = parseFloat(item.price) || 0;
                 totalPrice += itemPrice;
@@ -218,25 +215,20 @@
                 cartItemsContainer.appendChild(cartItemDiv);
             });
     
-            // Update total price display
             document.getElementById('cartTotal').innerText = `$${totalPrice.toFixed(2)}`;
         }
     
-        // Function to remove item from cart and re-render
         function removeFromCart(index) {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
             if (index >= 0 && index < cart.length) {
-                cart.splice(index, 1); // Remove item at given index
-                localStorage.setItem('cart', JSON.stringify(cart)); // Update storage
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
             }
-    
-            renderCart(); // Re-render cart UI
+            renderCart();
         }
     
-        // Load and display cart items when the page is ready
         document.addEventListener('DOMContentLoaded', renderCart);
     </script>
-    
+
 </body>
 </html>
