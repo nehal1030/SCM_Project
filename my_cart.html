@@ -180,65 +180,64 @@
     </footer>
 
     <script>
-        // Load cart data and display items
-        document.addEventListener('DOMContentLoaded', () => {
-            // Retrieve cart data and total price from localStorage
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+        // Renders the cart items and updates total
+    function renderCart() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let totalPrice = 0;
 
-            // Reference the cart items container
-            const cartItemsContainer = document.getElementById('cartItems');
-            cartItemsContainer.innerHTML = ''; // Clear the container
+        const cartItemsContainer = document.getElementById('cartItems');
+        cartItemsContainer.innerHTML = ''; // Clear container
 
-            // Check if the cart is empty
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
-                document.getElementById('cartTotal').innerText = `$${totalPrice.toFixed(2)}`;
-                return;
-            }
+        // If cart is empty
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
+            document.getElementById('cartTotal').innerText = '$0.00';
+            return;
+        }
 
-            // Loop through the cart array and dynamically render each item
-            cart.forEach((item, index) => {
-                const cartItemDiv = document.createElement('div');
-                cartItemDiv.classList.add('cart-item');
+        // Loop through items and display them
+        cart.forEach((item, index) => {
+            const itemPrice = parseFloat(item.price) || 0;
+            totalPrice += itemPrice;
 
-                cartItemDiv.innerHTML = `
-                    <div class="item-info">
-                        <img src="${item.imageUrl || 'https://via.placeholder.com/80x120'}" alt="${item.bookTitle}">
-                        <div class="item-details">
-                            <h3>${item.bookTitle}</h3>
-                            <p>Price: $${item.price}</p>
-                        </div>
+            const cartItemDiv = document.createElement('div');
+            cartItemDiv.classList.add('cart-item');
+
+            cartItemDiv.innerHTML = `
+                <div class="item-info">
+                    <img src="${item.imageUrl || 'https://via.placeholder.com/80x120'}" 
+                         alt="${item.bookTitle}" class="item-image">
+                    <div class="item-details">
+                        <h3>${item.bookTitle}</h3>
+                        <p>Price: $${itemPrice.toFixed(2)}</p>
                     </div>
-                    <div class="item-price">$${item.price}</div>
-                    <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
-                `;
+                </div>
+                <div class="item-price">$${itemPrice.toFixed(2)}</div>
+                <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+            `;
 
-                cartItemsContainer.appendChild(cartItemDiv);
-            });
-
-            // Update the total price display
-            document.getElementById('cartTotal').innerText = `$${totalPrice.toFixed(2)}`;
+            cartItemsContainer.appendChild(cartItemDiv);
         });
 
-        // Function to remove items from the cart
-        function removeFromCart(index) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+        // Update total price in UI and localStorage
+        document.getElementById('cartTotal').innerText = `$${totalPrice.toFixed(2)}`;
+        localStorage.setItem('totalPrice', totalPrice.toFixed(2));
+    }
 
-            // Deduct the item's price from the total price
-            totalPrice -= cart[index].price;
+    // Removes an item from the cart
+    function removeFromCart(index) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            // Remove the item from the cart array
-            cart.splice(index, 1);
-
-            // Save the updated cart and total price in localStorage
-            localStorage.setItem('cart', JSON.stringify(cart));
-            localStorage.setItem('totalPrice', totalPrice.toFixed(2));
-
-            // Reload the page to reflect changes
-            location.reload();
+        if (index >= 0 && index < cart.length) {
+            cart.splice(index, 1); // Remove item
+            localStorage.setItem('cart', JSON.stringify(cart)); // Update cart
         }
+
+        renderCart(); // Refresh UI
+    }
+
+    // Run renderCart when page loads
+    document.addEventListener('DOMContentLoaded', renderCart);
     </script>
 </body>
 </html>
