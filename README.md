@@ -29,7 +29,7 @@ group effort by four dedicated team members.
 To run this project locally:
 
 1. Clone the repository on GitBash 
-   git clone https://github.com/your-username/beyond-books.git
+   git clone https://github.com/nehal1030/SCM_Project.git
    cd beyond-books
 
 ## Team Members
