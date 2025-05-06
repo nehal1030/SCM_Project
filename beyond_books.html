@@ -309,23 +309,19 @@
     }
 
     // Function to add a book to the cart
-    function addToCart(bookTitle, price) {
-        // Add the book to the cart array
-        cart.push({ bookTitle, price });
+    function addToCart(bookTitle, price, imageUrl) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        // Update the total price
-        totalPrice += price;
+    // Add new item
+    cart.push({
+        bookTitle: bookTitle,
+        price: parseFloat(price),
+        imageUrl: imageUrl
+    });
 
-        // Save the updated cart and total price in localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
-        localStorage.setItem('totalPrice', totalPrice.toFixed(2));
-
-        // Update the displayed total price
-        document.getElementById('totalPrice').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
-
-        // Notify the user
-        alert(`${bookTitle} added to cart!`);
-    }
+    // Save cart and update total price
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 </script>
 
 </body>
