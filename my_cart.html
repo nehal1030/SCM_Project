@@ -180,64 +180,63 @@
     </footer>
 
     <script>
-        // Renders the cart items and updates total
-    function renderCart() {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let totalPrice = 0;
-
-        const cartItemsContainer = document.getElementById('cartItems');
-        cartItemsContainer.innerHTML = ''; // Clear container
-
-        // If cart is empty
-        if (cart.length === 0) {
-            cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
-            document.getElementById('cartTotal').innerText = '$0.00';
-            return;
-        }
-
-        // Loop through items and display them
-        cart.forEach((item, index) => {
-            const itemPrice = parseFloat(item.price) || 0;
-            totalPrice += itemPrice;
-
-            const cartItemDiv = document.createElement('div');
-            cartItemDiv.classList.add('cart-item');
-
-            cartItemDiv.innerHTML = `
-                <div class="item-info">
-                    <img src="${item.imageUrl || 'https://via.placeholder.com/80x120'}" 
-                         alt="${item.bookTitle}" class="item-image">
-                    <div class="item-details">
-                        <h3>${item.bookTitle}</h3>
-                        <p>Price: $${itemPrice.toFixed(2)}</p>
+        // Function to render all items in the cart
+        function renderCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+            let totalPrice = 0;
+    
+            cartItemsContainer.innerHTML = ''; // Clear previous content
+    
+            // Show message if cart is empty
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
+                document.getElementById('cartTotal').innerText = '$0.00';
+                return;
+            }
+    
+            // Render each cart item
+            cart.forEach((item, index) => {
+                const itemPrice = parseFloat(item.price) || 0;
+                totalPrice += itemPrice;
+    
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('cart-item');
+    
+                cartItemDiv.innerHTML = `
+                    <div class="item-info">
+                        <img class="item-image" src="${item.imageUrl || 'https://via.placeholder.com/80x120'}" alt="${item.bookTitle}">
+                        <div class="item-details">
+                            <h3>${item.bookTitle}</h3>
+                            <p>Price: $${itemPrice.toFixed(2)}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="item-price">$${itemPrice.toFixed(2)}</div>
-                <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
-            `;
-
-            cartItemsContainer.appendChild(cartItemDiv);
-        });
-
-        // Update total price in UI and localStorage
-        document.getElementById('cartTotal').innerText = `$${totalPrice.toFixed(2)}`;
-        localStorage.setItem('totalPrice', totalPrice.toFixed(2));
-    }
-
-    // Removes an item from the cart
-    function removeFromCart(index) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        if (index >= 0 && index < cart.length) {
-            cart.splice(index, 1); // Remove item
-            localStorage.setItem('cart', JSON.stringify(cart)); // Update cart
+                    <div class="item-price">$${itemPrice.toFixed(2)}</div>
+                    <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+                `;
+    
+                cartItemsContainer.appendChild(cartItemDiv);
+            });
+    
+            // Update total price display
+            document.getElementById('cartTotal').innerText = `$${totalPrice.toFixed(2)}`;
         }
-
-        renderCart(); // Refresh UI
-    }
-
-    // Run renderCart when page loads
-    document.addEventListener('DOMContentLoaded', renderCart);
+    
+        // Function to remove item from cart and re-render
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            if (index >= 0 && index < cart.length) {
+                cart.splice(index, 1); // Remove item at given index
+                localStorage.setItem('cart', JSON.stringify(cart)); // Update storage
+            }
+    
+            renderCart(); // Re-render cart UI
+        }
+    
+        // Load and display cart items when the page is ready
+        document.addEventListener('DOMContentLoaded', renderCart);
     </script>
+    
 </body>
 </html>
