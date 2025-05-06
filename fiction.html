@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiction Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background:#0f1111;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .book {
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .book h3 {
+            margin: 0;
+        }
+        .book p {
+            margin: 5px 0;
+        }
+        .book button {
+            background: #ffa500;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .book button:hover {
+            background: #ffa500;
+        }
+
+        .view_more_button {
+             display: flex;
+            justify-content: center;   
+            align-items: center;       /* Vertically center the button */
+            
+        }
+
+      
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <h1>Fiction Books</h1>
+    </header>
+    <div class="container">
+        <h2>Featured Fiction Books :</h2>
+
+        <div class="book">
+            <h3>The Great Gatsby</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/M/MV5BMTkxNTk1ODcxNl5BMl5BanBnXkFtZTcwMDI1OTMzOQ@@.V1_FMjpg_UX1000.jpg" height="300" width="200" alt="The Great Gatsby">
+            <p><strong>Author:</strong> F. Scott Fitzgerald</p>
+            <p><strong>Price:</strong> $10.99</p>
+            <p><strong>Description:</strong> A story about the wealthy Jay Gatsby and his love for Daisy Buchanan, exploring themes of decadence and excess in the 1920s.
+                Narrated by Nick Carraway, the story explores themes of wealth, the American Dream, and the illusions of the past.</p>
+            <p><button onclick="addToCart('The Great Gatsby', 10.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>1984</h3>
+            <br>
+            <img src="https://i.pinimg.com/originals/c5/94/49/c59449aaffccfdcba684cee512339cd0.jpg" height="300" width="200" alt="1984">
+            <p><strong>Author:</strong> George Orwell</p>
+            <p><strong>Price:</strong> $8.99</p>
+            <p><strong>Description:</strong> A dystopian novel set in a totalitarian society governed by the Party and its leader, Big Brother.</p>
+            <p><button onclick="addToCart('1984', 8.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>To Kill a Mockingbird</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/81gepf1eMqL.AC_UF1000,1000_QL80.jpg" height="300" width="200" alt="To Kill a Mockingbird">
+            <p><strong>Author:</strong> Harper Lee</p>
+            <p><strong>Price:</strong> $12.99</p>
+            <p><strong>Description:</strong> A novel about the serious issues of race, class, and gender in the American South, seen through the eyes of a young girl.</p>
+            <p><button onclick="addToCart('To Kill a Mockingbird', 12.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>Pride and Prejudice</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/712P0p5cXIL.AC_UF1000,1000_QL80.jpg" height="300" width="200" alt="Pride and Prejudice">
+            <p><strong>Author:</strong> Jane Austen</p>
+            <p><strong>Price:</strong> $9.99</p>
+            <p><strong>Description:</strong> A romantic novel that charts the emotional development of the protagonist, Elizabeth Bennet, and her relationship with Mr. Darcy.</p>
+            <p><button onclick="addToCart('Pride and Prejudice', 9.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>The Past Is Rising</h3>
+            <br>
+            <img src="https://th.bing.com/th/id/OIP.p5FiMK7c3OR6Tfv_UkfwzgAAAA?w=129&h=193&c=7&r=0&o=5&dpr=1.5&pid=1.7" height="300" width="200" alt="The Past Is Rising">
+            <p><strong>Author:</strong>Kathryn Bywaters,</p>
+            <p><strong>Price:</strong>$11.90 </p>
+            <p><strong>Description:</strong> In this epic tale, fourteen-year-old Erik dreams of past glories and becomes entangled in a battle against the resurging False Kings.
+            </p>
+            <p><button onclick="addToCart('The Past Is Rising', 17.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>The Catcher in the Rye</h3>
+            <br>
+            <img src="https://rukminim2.flixcart.com/image/850/1000/kufuikw0/book/p/a/q/the-catcher-in-the-rye-original-imag7jttju9vfuxa.jpeg?q=20&crop=false" height="300" width="200" alt="The Catcher in the Rye">
+            <p><strong>Author:</strong> J.D. Salinger</p>
+            <p><strong>Price:</strong> $11.99</p>
+            <p><strong>Description:</strong> A novel about teenage angst and alienation, centered on the experiences of the protagonist, Holden Caulfield.</p>
+            <p><button onclick="addToCart('The Catcher in the Rye', 11.99)">Add to Cart</button></p>
+        </div>
+        <br>
+          
+    </div>
+
+
+
+</body>
+</html>

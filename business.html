@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background:#0f1111;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .book {
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .book h3 {
+            margin: 0;
+        }
+        .book p {
+            margin: 5px 0;
+        }
+        .book button {
+            background: #ffa500;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .book button:hover {
+            background: #ffa500;
+        }
+
+        .view_more_button {
+             display: flex;
+            justify-content: center;   /* Horizontally center the button */
+            align-items: center;       /* Vertically center the button */
+            
+        }
+
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Business Books</h1>
+    </header>
+    <div class="container">
+        <h2>Featured Business Books</h2>
+
+        <div class="book">
+            <h3>Rich Dad Poor Dad</h3>
+            <img src="https://cdn.kobo.com/book-images/c81ea4de-cfb7-415d-8634-314aad041fdb/1200/1200/False/rich-dad-poor-dad-9.jpg" height="200" width="200" alt="Rich Dad Poor Dad">
+            <p><strong>Author:</strong> Robert T. Kiyosaki</p>
+            <p><strong>Price:</strong> $9.99</p>
+            <p><strong>Description:</strong> This book contrasts the financial philosophies of Kiyosaki's two fathers, emphasizing the importance of financial literacy and investment.</p>
+            <p><button onclick="addToCart('Rich Dad Poor Dad', 9.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>The Lean Startup</h3>
+            <img src="https://m.media-amazon.com/images/I/61BFOf9Ap-L.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="The Lean Startup">
+            <p><strong>Author:</strong> Eric Ries</p>
+            <p><strong>Price:</strong> $14.99</p>
+            <p><strong>Description:</strong> A guide to creating and managing successful startups by employing a systematic, scientific approach to developing products and businesses.</p>
+            <p><button onclick="addToCart('The Lean Startup', 14.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>Thinking, Fast and Slow</h3>
+            <img src="https://m.media-amazon.com/images/I/71f6DceqZAL.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="Thinking, Fast and Slow">
+            <p><strong>Author:</strong> Daniel Kahneman</p>
+            <p><strong>Price:</strong> $15.99</p>
+            <p><strong>Description:</strong> A groundbreaking book that explores the dual systems of thought and how they influence decision-making in business and life.</p>
+            <p><button onclick="addToCart('Thinking, Fast and Slow', 15.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>How to Win Friends and Influence People</h3>
+            <img src="https://m.media-amazon.com/images/I/611OWa8x+WL.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="How to Win Friends and Influence People">
+            <p><strong>Author:</strong> Dale Carnegie</p>
+            <p><strong>Price:</strong> $12.99</p>
+            <p><strong>Description:</strong> A timeless classic on building relationships and effective communication, essential for success in business and personal life.</p>
+            <p><button onclick="addToCart('How to Win Friends and Influence People', 12.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>The 7 Habits of Highly Effective People</h3>
+            <img src="https://m.media-amazon.com/images/I/71Koyhv2bML.jpg" height="200" width="200" alt="The 7 Habits of Highly Effective People">
+            <p><strong>Author:</strong> Stephen R. Covey</p>
+            <p><strong>Price:</strong> $16.99</p>
+            <p><strong>Description:</strong> This book outlines seven essential habits that can transform personal and professional effectiveness.</p>
+            <p><button onclick="addToCart('The 7 Habits of Highly Effective People', 16.99)">Add to Cart</button></p>
+        </div>
+
+       
+    </div>
+</body>
+</html>

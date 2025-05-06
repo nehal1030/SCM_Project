@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEYOND BOOKS</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/circles-background-dark-tones_60389-166.jpg?semt=ais_hybrid');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #0f1111;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        #search {
+            background-color: #f08804;
+            padding: 10px;
+        }
+
+        #searchButton {
+            background-color: #f08804;
+        }
+
+        #featured_books {
+            color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Flexbox Container for Featured Books */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .book-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 15px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            color: #333;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .book-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .book-card h2 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .book-card p {
+            margin: 10px 0;
+            color: #444;
+        }
+
+        .book-card button {
+            background-color: #f08804;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .book-card button:hover {
+            background-color: #d47503;
+        }
+
+        .container .book-card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            height: 500px;
+            color: white;
+            background-color: #0f1111;
+        }
+
+        #copyright {
+            text-align: center;
+        }
+
+        #backToTop {
+            text-align: center;
+        }
+
+        #information, #categories, #help {
+            display: inline-block;
+            padding: 50px;
+            margin-top: 40px;
+            margin-left: 300px;
+        }
+
+        #categories {
+            margin-left: 100px;
+        }
+
+        #help {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BEYOND BOOKS</h1>
+        <nav>
+            <a href="/new.html">Home</a>
+            <a href="/categories.html" target="_main">Categories</a>
+            <a href="/my_account.html" target="_main">My Account</a>
+            <a href="/my_cart.html">My Cart</a>
+            <a href="/about_us.html" target="_main">About Us</a>
+            <a href="/contact_us.html">Contact Us</a>
+            <input id="searchInput" placeholder="search BeyondBooks.in">
+            <button id="searchButton" onclick="searchBooks()">Search</button>
+            <h3 id="totalPrice">Total Price: $0.00</h3>
+        </nav>
+    </header>
+
+    <div id="featured_books">
+        <h2>Featured Books :</h2>
+        <div class="container">
+            <!-- Book Cards -->
+            <div class="book-card" data-title="Atomic Habits" data-description="Atomic Habits by James Clear...">
+                <h2>ATOMIC HABITS</h2>
+                <img src="https://charleshaworth.com/wp-content/uploads/2020/09/atomic-habits_gallery_hi-res_01.jpg" alt="Atomic Habits">
+                <p><strong>Author:</strong> JAMES CLEAR</p>
+                <p><strong>Price:</strong> $13.99</p>
+                <p><button onclick="addToCart('Atomic Habits', 13.99)">Add to Cart</button></p>
+            </div>
+            <!-- Add more book cards here -->
+        </div>
+    </div>
+
+    <footer>
+        <div id="backToTop"><a href="#">Back to top</a></div>
+        <div id="copyright">&copy; 2024 Online Bookstore</div>
+    </footer>
+
+    <script>
+        let cart = [];
+        let totalPrice = 0;
+
+        function searchBooks() {
+            let searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            let bookCards = document.querySelectorAll('.book-card');
+
+            bookCards.forEach(card => {
+                let title = card.getAttribute('data-title').toLowerCase();
+                let description = card.getAttribute('data-description').toLowerCase();
+                card.style.display = title.includes(searchTerm) || description.includes(searchTerm) ? 'block' : 'none';
+            });
+        }
+
+        function addToCart(bookTitle, price) {
+            cart.push({ bookTitle, price });
+            totalPrice += price;
+            document.getElementById('totalPrice').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
+            alert(`${bookTitle} added to cart!`);
+        }
+    </script>
+</body>
+</html>

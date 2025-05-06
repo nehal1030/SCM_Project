@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biography Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #0f1111;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .book {
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .book h3 {
+            margin: 0;
+        }
+        .book p {
+            margin: 5px 0;
+        }
+        .book button {
+            background: #ffa500;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .book button:hover {
+            background: #ffa500;
+        }
+
+        .view_more_button {
+             display: flex;
+            justify-content: center;   
+            align-items: center;       
+            
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1><u>Biography Books</u></h1>
+    </header>
+    <div class="container">
+        <h2>Featured Biography Books:</h2>
+
+        <div class="book">
+            <h3>The Diary of a Young Girl</h3>
+            <br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfqAf6PRoNFcchlKabOAQn1u0Q7VP3NgKjg&s" height="200" width="200" alt="The Diary of a Young Girl">
+            <p><strong>Author:</strong> Anne Frank</p>
+            <p><strong>Price:</strong> $10.99</p>
+            <p><strong>Description:</strong> The poignant diary of a Jewish girl hiding from the Nazis during World War II, offering a powerful perspective on life during this time.</p>
+            <p><button onclick="addToCart('The Diary of a Young Girl', 10.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>Becoming</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/81KGjsBXQ7L.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="Becoming">
+            <p><strong>Author:</strong> Michelle Obama</p>
+            <p><strong>Price:</strong> $12.99</p>
+            <p><strong>Description:</strong> A deeply personal memoir by the former First Lady of the United States, sharing her journey from the South Side of Chicago to the White House.</p>
+            <p><button onclick="addToCart('Becoming', 12.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>The Long Walk to Freedom</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/91jMa+ndqrL.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="The Long Walk to Freedom">
+            <p><strong>Author:</strong> Nelson Mandela</p>
+            <p><strong>Price:</strong> $14.99</p>
+            <p><strong>Description:</strong> The autobiography of Nelson Mandela, chronicling his early life, activism, and 27 years in prison before becoming South Africa's first black president.</p>
+            <p><button onclick="addToCart('The Long Walk to Freedom', 14.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>I Am Malala</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/811pl5hIebL.AC_UF1000,1000_QL80.jpg" height="200" width="200" alt="I Am Malala">
+            <p><strong>Author:</strong> Malala Yousafzai</p>
+            <p><strong>Price:</strong> $11.99</p>
+            <p><strong>Description:</strong> The inspiring story of a young Pakistani girl who stood up for education and was shot by the Taliban, now a global advocate for girls' education.</p>
+            <p><button onclick="addToCart('I Am Malala', 11.99)">Add to Cart</button></p>
+        </div>
+
+        <div class="book">
+            <h3>Steve Jobs</h3>
+            <br>
+            <img src="https://m.media-amazon.com/images/I/71PTAp96xLL.AC_UF1000,1000_QL80.jpg" height="300" width="200" alt="Steve Jobs">
+            <p><strong>Author:</strong> Walter Isaacson</p>
+            <p><strong>Price:</strong> $13.99</p>
+            <p><strong>Description:</strong> A biography of the co-founder of Apple Inc., revealing his innovations, challenges, and the impact of his work on the technology industry.</p>
+            <p><button onclick="addToCart('Steve Jobs', 13.99)">Add to Cart</button></p>
+        </div>
+ 
+    </div>
+</body>
+</html>
